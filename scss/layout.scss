@@ -1,0 +1,127 @@
+@import "vars";
+@import "mixins";
+// @붙이면 가져올수 있다. (import할때는 제목의 언더바를 붙이지 않는다)
+
+body {
+  font-family: "Roboto", "Noto Sans KR", "돋움";
+  color: #111;
+  font-size: 18px;
+  overflow-x: hidden;
+  //background-color: green;
+  // min-height: 3000px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+//이미지는 글자처럼 처리된다.
+img {
+  vertical-align: top;
+  //이걸쓰면 이미지 위로 붙여 준다. 안쓰면 이미가 살짝 벌어짐
+}
+
+button,
+input {
+  background: none;
+  border: none;
+  outline: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+.container {
+  width: 1300px;
+  margin: 0 auto;
+}
+#header {
+  color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  z-index: 99;
+  h1 > a {
+    position: absolute;
+    left: 0;
+    margin-left: 80px;
+    display: flex;
+    align-items: center;
+    height: 110px;
+    img {
+      width: 70px;
+    }
+  }
+  nav {
+    margin-right: 110px;
+    > ul {
+      display: flex;
+      li {
+        &:hover {
+          .depth01 {
+            background-color: #fff;
+            color: #333;
+            &:after {
+              transform: scale(1);
+              transition: all 0.3s ease;
+            }
+          }
+          .depth02 {
+            visibility: visible;
+          }
+        }
+      }
+      .depth01 {
+        padding: 0 50px;
+        height: 110px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        position: relative;
+        &:after {
+          content: "";
+          width: 30px;
+          height: 1px;
+          background-color: #ccc;
+          display: block;
+          position: absolute;
+          bottom: 20px;
+          transform: scaleX(0);
+        }
+      }
+      .depth02 {
+        background-color: #fff;
+        color: #333;
+        text-align: center;
+        padding: 0 20px 20px;
+        font-size: 16px;
+        visibility: hidden;
+        li {
+          padding: 10px 0;
+        }
+      }
+    }
+  }
+  #util {
+    position: absolute;
+    right: 0;
+    width: 90px;
+    height: 100vh;
+    //background-color: pink;
+    border-left: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > i {
+      margin-bottom: 20px;
+    }
+    .menu {
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
