@@ -66,29 +66,6 @@
 #products .container .background-logo p {
   text-align: center;
 }
-#products .container .product-pagination {
-  position: absolute;
-  left: auto;
-  right: 0;
-  width: auto;
-  top: 25%;
-  bottom: auto;
-}
-#products .container .product-pagination .swiper-pagination-bullet {
-  width: 180px;
-  height: 10px;
-  border-radius: 0;
-  background-color: transparent;
-  margin-bottom: 40px;
-}
-#products .container .product-pagination .swiper-pagination-bullet-active {
-  font-weight: bold;
-  transition: all 0.25s ease;
-}
-#products .container .product-pagination .swiper-pagination-bullet-active:after {
-  content: "+";
-  margin-left: 10px;
-}
 #products .container .products-slide {
   text-align: center;
   position: relative;
@@ -120,6 +97,26 @@
 }
 #products .container .products-slide .product-navigation .next-btn {
   right: 0;
+}
+#products .container .products-pag {
+  position: absolute;
+  height: 250px;
+  right: 50px;
+  top: 10%;
+  overflow: hidden;
+}
+#products .container .products-pag ul li {
+  color: #ccc;
+  text-align: right;
+}
+#products .container .products-pag ul li.on {
+  color: #111;
+  font-size: 25px;
+  font-weight: bold;
+}
+#products .container .products-pag ul li.on:after {
+  content: "+";
+  margin-left: 10px;
 }
 
 #technology {

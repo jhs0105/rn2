@@ -54,16 +54,16 @@ input {
 #header nav > ul {
   display: flex;
 }
-#header nav > ul li:hover .depth01 {
+#header nav > ul > li:hover .depth01 {
   background-color: #fff;
   color: #333;
 }
-#header nav > ul li:hover .depth01:after {
+#header nav > ul > li:hover .depth01:after {
   transform: scale(1);
   transition: all 0.3s ease;
 }
-#header nav > ul li:hover .depth02 {
-  visibility: visible;
+#header nav > ul > li:hover .depth02 {
+  display: block;
 }
 #header nav > ul .depth01 {
   padding: 0 50px;
@@ -90,7 +90,7 @@ input {
   text-align: center;
   padding: 0 20px 20px;
   font-size: 16px;
-  visibility: hidden;
+  display: none;
 }
 #header nav > ul .depth02 li {
   padding: 10px 0;
