@@ -122,7 +122,7 @@
 #technology {
   background-color: #121212;
   color: #fff;
-  padding: 150px 0;
+  padding: 150px 0 600px;
 }
 #technology .contents h2 {
   font-size: 80px;
@@ -149,11 +149,42 @@
   justify-content: space-evenly;
 }
 #technology ul li {
+  position: relative;
+  width: 290px;
+  padding-top: 100px;
+}
+#technology ul li .info-box {
   width: 290px;
   height: 445px;
-  background-color: #0b0b0b;
   box-sizing: border-box;
   padding: 50px 30px;
+  background-color: #0b0b0b;
+  position: absolute;
+  left: 0;
+}
+#technology ul li .info-box > span {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  width: 150px;
+  left: -100px;
+  top: 80px;
+  transform: rotate(90deg);
+  font-size: 15px;
+  opacity: 0.5;
+}
+#technology ul li:nth-child(2) {
+  margin-top: 100px;
+}
+#technology ul li:nth-child(3) {
+  margin-top: -100px;
+}
+#technology ul li:nth-child(4) {
+  margin-top: 50px;
+}
+#technology ul li:nth-child(4) .info-box {
+  right: 0;
+  left: auto;
 }
 #technology ul li .img-box {
   height: 345px;
@@ -163,4 +194,69 @@
 }
 #technology ul li .img-box img {
   width: 200px;
+  filter: brightness(0) invert(1);
+}
+#technology ul li:hover .info-box {
+  transition: all 0.2s ease;
+  z-index: 5;
+  width: 400px;
+  box-shadow: 0px 0px 5px 5px rgba(0, 122, 255, 0.2);
+}
+#technology ul li:hover .img-box img {
+  filter: brightness(1) invert(0);
+}
+
+#tomorrow {
+  padding: 150px 0;
+  display: flex;
+}
+#tomorrow .title {
+  width: 40%;
+  padding-left: 10px;
+}
+#tomorrow .title h2 {
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 50px;
+}
+#tomorrow .list {
+  width: 50%;
+}
+#tomorrow .list ul li {
+  padding: 50px 20px;
+  border-bottom: 1px solid #333;
+}
+#tomorrow .list ul li:nth-child(1) {
+  border-top: 1px solid #333;
+}
+#tomorrow .list ul li h3 {
+  font-size: 25px;
+  font-weight: 700;
+}
+#tomorrow .list ul li.on {
+  padding: 80px 20px;
+}
+#tomorrow .list ul li.on .contents {
+  display: block;
+}
+#tomorrow .list ul li .contents {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  display: none;
+  margin-top: 20px;
+}
+#tomorrow .list ul li .contents p {
+  font-size: 16px;
+  width: 350px;
+  word-break: keep-all;
+  line-height: 1.5;
+}
+#tomorrow .list ul li .contents img {
+  position: absolute;
+  right: -100px;
+  top: 0;
+  transform: translateY(-40%);
+  z-index: -1;
 }
