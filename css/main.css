@@ -237,32 +237,43 @@
 }
 #tomorrow .list ul li.on {
   padding: 80px 20px;
-  transition: all 0.3s ease;
 }
 #tomorrow .list ul li.on .contents {
-  display: block;
+  height: 100%;
+  margin-top: 20px;
+  transition: all 0.25s ease;
+}
+#tomorrow .list ul li.on .contents p {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.5s ease;
 }
 #tomorrow .list ul li.on .contents img {
-  transform: translateY(-45%);
+  visibility: visible;
+  transform: rotate(-20deg) translateY(-50%);
+  transition: all 0.5s ease;
 }
 #tomorrow .list ul li .contents {
   display: flex;
   justify-content: space-between;
   position: relative;
-  display: none;
-  margin-top: 20px;
+  height: 0;
 }
 #tomorrow .list ul li .contents p {
   font-size: 16px;
   width: 350px;
   word-break: keep-all;
   line-height: 1.5;
+  visibility: hidden;
+  opacity: 0;
 }
 #tomorrow .list ul li .contents img {
   position: absolute;
   right: -100px;
   top: 0;
   z-index: -1;
+  visibility: hidden;
+  transform: translateY(-40%);
 }
 
 #recruit {
