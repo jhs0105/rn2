@@ -252,11 +252,12 @@
   }
 }
 #tomorrow {
-  padding: 150px 0;
+  height: 100vh;
+  padding: 180px 0 100px;
   display: flex;
   .title {
     width: 40%;
-    padding-left: 10px;
+    padding-left: 30px;
     h2 {
       font-size: 80px;
       font-weight: 700;
@@ -279,8 +280,12 @@
         }
         &.on {
           padding: 80px 20px;
+          transition: all 0.3s ease;
           .contents {
             display: block;
+            img {
+              transform: translateY(-45%);
+            }
           }
         }
         .contents {
@@ -299,11 +304,74 @@
             position: absolute;
             right: -100px;
             top: 0;
-            transform: translateY(-40%);
             z-index: -1;
           }
         }
       }
+    }
+  }
+}
+#recruit {
+  background-image: url("../image/recruit_bg.jpg");
+  background-size: cover;
+  display: flex;
+  .recruit-contents {
+    width: 30%;
+    padding: 250px 0 200px;
+    padding-left: 50px;
+    color: #fff;
+    h2 {
+      text-transform: uppercase;
+      font-size: 80px;
+      font-weight: 700;
+    }
+    p {
+      padding: 50px 0 100px;
+    }
+    ul {
+      display: flex;
+      li {
+        height: 100px;
+        border-right: 0.5px solid #fff;
+        @include flex;
+        &:hover {
+          color: #007aff;
+          img {
+            filter: brightness(1) invert(0);
+          }
+        }
+      }
+      li > a {
+        margin: 0 40px;
+        display: flex;
+        flex-direction: column;
+        height: 80px;
+        align-items: center;
+        justify-content: space-between;
+        img {
+          width: 40px;
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+  }
+  .line {
+    margin: 300px auto auto;
+    width: 60%;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+  }
+}
+#newsroom {
+  padding: 200px 0;
+  .newsroom-title {
+    text-align: center;
+    h2 {
+      text-transform: uppercase;
+      font-size: 80px;
+      font-weight: 700;
+    }
+    p {
+      padding: 100px 0;
     }
   }
 }

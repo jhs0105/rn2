@@ -253,7 +253,7 @@
       </div>
       <div class="list">
         <ul>
-          <li class="on">
+          <li>
             <h3>지속가능경영</h3>
             <div class="contents">
               <p>
@@ -297,6 +297,39 @@
             </div>
           </li>
         </ul>
+      </div>
+    </div>
+    <div id="recruit">
+      <div class="recruit-contents">
+        <h2>recruit</h2>
+        <p>새로운 가치를 위해 도전하는 인재, 알엔투테크놀로지와 시작하세요.</p>
+        <ul>
+          <li>
+            <a href=""
+              ><img src="../image/recruit_icon1.png" alt="" /> 인재상</a
+            >
+          </li>
+          <li>
+            <a href="">
+              <img src="../image/recruit_icon2.png" alt="" /> 인사제도</a
+            >
+          </li>
+          <li>
+            <a href="">
+              <img src="../image/recruit_icon3.png" alt="" /> 복리후생</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="line"></div>
+    </div>
+    <div id="newsroom">
+      <div class="newsroom-title">
+        <h2>newsroom</h2>
+        <p>
+          알엔투테크놀로지를 소개하는 홍보영상과 새로운 소식을 확인하실 수
+          있습니다.
+        </p>
       </div>
     </div>
   </body>
@@ -369,5 +402,36 @@
         },
       },
     });
+
+    let i = 1;
+    let timer = setInterval(function () {
+      if (i > 4) {
+        i = 1;
+      } else {
+        const tomorrowList = $(`#tomorrow .list li:nth-child(${i})`);
+        tomorrowList.addClass("on");
+        const sibling = tomorrowList.siblings();
+        sibling.removeClass("on");
+        i++;
+      }
+    }, 2000);
+
+    for (let i = 1; i < 5; i++) {
+      $(`#tomorrow .list li:nth-child(${i})`).on("mouseenter", function () {
+        $(this).addClass("on");
+        const sibling = $(this).siblings();
+        sibling.removeClass("on");
+        clearInterval(timer);
+      });
+    }
+
+    // for (let i = 0; i < 4; i++) {
+    //   const tomorrowList = $(`#tomorrow .list li:nth-child(${i + 1})`);
+    //   setInterval(function () {
+    //     tomorrowList.addClass("on");
+    //     const sibling = tomorrowList.siblings();
+    //     sibling.removeClass("on");
+    //   }, 2000 * (i + 1));
+    // }
   </script>
 </html>
