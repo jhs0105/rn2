@@ -279,11 +279,13 @@
           font-weight: 700;
         }
         &.on {
-          padding: 80px 20px;
+          padding-top: 80px;
+          padding-bottom: 80px;
+          transition: all 0.5s ease;
           .contents {
             height: 100%;
             margin-top: 20px;
-            transition: all 0.25s ease;
+            transition: all 0.5s ease;
             p {
               visibility: visible;
               opacity: 1;
@@ -291,8 +293,9 @@
             }
             img {
               visibility: visible;
-              transform: rotate(-20deg) translateY(-50%);
-              transition: all 0.5s ease;
+              transform: rotate(0deg) translateY(-50%) scale(1);
+              opacity: 1;
+              //transition: all 0.5s ease;
             }
           }
         }
@@ -317,7 +320,9 @@
             top: 0;
             z-index: -1;
             visibility: hidden;
-            transform: translateY(-40%);
+            transform: rotate(30deg) translateY(-40%) scale(0.5);
+            transition: all 0.5s ease;
+            opacity: 0;
           }
         }
       }

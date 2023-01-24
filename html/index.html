@@ -414,7 +414,7 @@
         sibling.removeClass("on");
         i++;
       }
-    }, 2000);
+    }, 2500);
 
     for (let i = 1; i < 5; i++) {
       $(`#tomorrow .list li:nth-child(${i})`).on("mouseenter", function () {
@@ -425,13 +425,13 @@
       });
     }
 
-    // for (let i = 0; i < 4; i++) {
-    //   const tomorrowList = $(`#tomorrow .list li:nth-child(${i + 1})`);
+    // for (let i = 1; i < 5; i++) {
     //   setInterval(function () {
+    //     const tomorrowList = $(`#tomorrow .list li:nth-child(${i})`);
     //     tomorrowList.addClass("on");
     //     const sibling = tomorrowList.siblings();
     //     sibling.removeClass("on");
-    //   }, 2000 * (i + 1));
+    //   }, 2000 * i);
     // }
   </script>
 </html>
