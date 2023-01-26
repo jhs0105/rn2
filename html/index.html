@@ -331,6 +331,83 @@
           있습니다.
         </p>
       </div>
+      <div class="news">
+        <div class="btns">
+          <button data-name="all">ALL</button>
+          <button data-name="media">MEDIA</button>
+          <button data-name="news">NEWS</button>
+        </div>
+        <div class="news-list">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide all news">
+              <a href="">
+                <div class="img-box">
+                  <img src="../image/news01.jpeg" alt="" />
+                </div>
+                <span class="date">2022.11.10</span>
+                <h3>
+                  알엔투테크놀로지, 5G 투자 확대에 따른 성장세 지속 -메리츠
+                </h3>
+              </a>
+            </li>
+            <li class="swiper-slide all media">
+              <a href="">
+                <div class="img-box">
+                  <img src="../image/news02.jpeg" alt="" />
+                </div>
+                <span class="date">2022.11.10</span>
+                <h3>
+                  주가를 기술적으로 분석하여 예측하는 지표의 하나인 골든크로스
+                  종목에 대한 관심이 증가
+                </h3>
+              </a>
+            </li>
+            <li class="swiper-slide all news">
+              <a href="">
+                <div class="img-box">
+                  <img src="../image/news03.jpeg" alt="" />
+                </div>
+                <span class="date">2022.11.10</span>
+                <h3>
+                  "알엔투테크놀로지, 하반기 본업 턴어라운드에 신규사업까지"
+                </h3>
+              </a>
+            </li>
+            <li class="swiper-slide all media">
+              <a href="">
+                <div class="img-box">
+                  <img src="../image/news04.jpeg" alt="" />
+                </div>
+                <span class="date">2022.11.10</span>
+                <h3>
+                  코리아에프티·나노씨엠에스·알엔투테크놀로지 주가 상한가…기업
+                  가치 추정은?
+                </h3>
+              </a>
+            </li>
+            <li class="swiper-slide all media">
+              <a href="">
+                <div class="img-box">
+                  <img src="../image/news05.jpeg" alt="" />
+                </div>
+                <span class="date">2022.11.10</span>
+                <h3>알엔투테크놀로지 주가 2%↑…자회사 설립 소식에 강세</h3>
+              </a>
+            </li>
+            <li class="swiper-slide all news">
+              <a href="">
+                <div class="img-box">
+                  <img src="../image/news06.jpg" alt="" />
+                </div>
+                <span class="date">2022.11.10</span>
+                <h3>
+                  최대주주 바뀐다...알엔투테크놀로지, 주식양수도 계약 체결
+                </h3>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </body>
   <script>
@@ -433,5 +510,10 @@
     //     sibling.removeClass("on");
     //   }, 2000 * i);
     // }
+
+    const newsSwiper = new Swiper(".news-list", {
+      slidesPerView: 4,
+      spaceBetween: 50,
+    });
   </script>
 </html>
