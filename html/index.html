@@ -38,6 +38,7 @@
     <script src="../js/aos.js"></script>
     <script src="../js/fullpage.min.js"></script>
     <script src="../js/circletype.min.js"></script>
+    <script src="../js/isotope.pkgd.min.js"></script>
     <script src="../js/imagesloaded.pkgd.min.js"></script>
   </head>
   <body>
@@ -153,7 +154,7 @@
         </div>
         <!-- <div class="product-pagination swiper-pagination-vertical"></div> -->
         <div class="products-slide">
-          <ul class="swiper-wrapper">
+          <ul class="swiper-wrapper grid">
             <li class="swiper-slide">
               <img src="../image/products_img01.png" alt="" />
             </li>
@@ -338,8 +339,8 @@
           <button data-name="news">NEWS</button>
         </div>
         <div class="news-list">
-          <ul class="swiper-wrapper">
-            <li class="swiper-slide all news">
+          <ul>
+            <li class="filter all news">
               <a href="">
                 <div class="img-box">
                   <img src="../image/news01.jpeg" alt="" />
@@ -350,7 +351,7 @@
                 </h3>
               </a>
             </li>
-            <li class="swiper-slide all media">
+            <li class="filter all media">
               <a href="">
                 <div class="img-box">
                   <img src="../image/news02.jpeg" alt="" />
@@ -362,7 +363,7 @@
                 </h3>
               </a>
             </li>
-            <li class="swiper-slide all news">
+            <li class="filter all news">
               <a href="">
                 <div class="img-box">
                   <img src="../image/news03.jpeg" alt="" />
@@ -373,7 +374,7 @@
                 </h3>
               </a>
             </li>
-            <li class="swiper-slide all media">
+            <li class="filter all media">
               <a href="">
                 <div class="img-box">
                   <img src="../image/news04.jpeg" alt="" />
@@ -385,7 +386,7 @@
                 </h3>
               </a>
             </li>
-            <li class="swiper-slide all media">
+            <li class="filter all media">
               <a href="">
                 <div class="img-box">
                   <img src="../image/news05.jpeg" alt="" />
@@ -394,7 +395,7 @@
                 <h3>알엔투테크놀로지 주가 2%↑…자회사 설립 소식에 강세</h3>
               </a>
             </li>
-            <li class="swiper-slide all news">
+            <li class="filter all news">
               <a href="">
                 <div class="img-box">
                   <img src="../image/news06.jpg" alt="" />
@@ -409,6 +410,39 @@
         </div>
       </div>
     </div>
+    <footer id="footer">
+      <div class="footer-title">
+        <ul>
+          <li><a href="">윤리경영제보</a></li>
+          <li><a href="">내부정보 관리규정</a></li>
+          <li><a href="">채용사이트</a></li>
+          <li><a href="">개인정보처리방침</a></li>
+        </ul>
+      </div>
+      <div class="address">
+        <h1><img src="../image/logo.png" alt="" />알엔투테크놀로지</h1>
+        <div class="dongtan address-box">
+          <dl>
+            <dt>동탄사업장 :</dt>
+            <dd>경기도 화성시 동탄산단 9길 11 [우편번호] 18487</dd>
+            <dt>TEL :</dt>
+            <dd>031 376 5400</dd>
+            <dt>FAX :</dt>
+            <dd>031 376 9151</dd>
+          </dl>
+        </div>
+        <div class="gangneung address-box">
+          <dl>
+            <dt>강릉사업장 :</dt>
+            <dd>경기도 강릉시 과학단지로 106-4 [우편번호] 25451</dd>
+            <dt>TEL :</dt>
+            <dd>033 646 4161</dd>
+            <dt>FAX :</dt>
+            <dd>033 645 4160</dd>
+          </dl>
+        </div>
+      </div>
+    </footer>
   </body>
   <script>
     const swiper = new Swiper("#main-visual", {
@@ -511,9 +545,26 @@
     //   }, 2000 * i);
     // }
 
-    const newsSwiper = new Swiper(".news-list", {
-      slidesPerView: 4,
-      spaceBetween: 50,
+    // const newsSwiper = new Swiper(".news-list", {
+    //   slidesPerView: 4,
+    //   spaceBetween: 50,
+    // });
+    const grid = $(".news-list ul").isotope({
+      itemSelector: ".filter",
+      layoutMode: "masonry",
     });
+    grid.imagesLoaded().progress(function () {
+      grid.isotope("layout");
+    });
+    for (let i = 0; i < 3; i++) {
+      $(`.news .btns button:nth-child(${i + 1})`).on("click", function () {
+        $(this).addClass("on");
+        const sibling = $(this).siblings();
+        sibling.removeClass("on");
+        const filterWord = $(this).data("name");
+        console.log(filterWord);
+        grid.isotope({ filter: `.${filterWord}` });
+      });
+    }
   </script>
 </html>
