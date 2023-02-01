@@ -514,28 +514,30 @@
       },
     });
 
-    //const TMR = $("#tomorrow .list ul li");
-    let i = 1;
+    const TmrList = $("#tomorrow .list li");
+    let count = 0;
+
     let timer = setInterval(function () {
-      if (i < 5) {
-        const tomorrowList = $(`#tomorrow .list li:nth-child(${i})`);
-        tomorrowList.addClass("on");
-        const sibling = tomorrowList.siblings();
-        sibling.removeClass("on");
-        i++;
-      } else {
-        i = 1;
+      $.each(TmrList, function (idx, item) {
+        if (idx === count) {
+          $(this).addClass("on");
+        } else {
+          $(this).removeClass("on");
+        }
+      });
+      count++;
+      if (count == 5) {
+        count = 0;
       }
     }, 2500);
 
-    for (let i = 1; i < 5; i++) {
-      $(`#tomorrow .list li:nth-child(${i})`).on("mouseenter", function () {
-        $(this).addClass("on");
-        const sibling = $(this).siblings();
-        sibling.removeClass("on");
-        //clearInterval(timer);
+    $(TmrList).each(function () {
+      $(this).mouseenter(function () {
+        $(this).addClass("on").siblings().removeClass("on");
+        clearInterval(timer);
       });
-    }
+      $(this).mouseleave(function () {});
+    });
 
     // for (let i = 1; i < 5; i++) {
     //   setInterval(function () {
