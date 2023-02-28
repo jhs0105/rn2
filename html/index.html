@@ -516,7 +516,6 @@
 
     const TmrList = $("#tomorrow .list li");
     let count = 0;
-
     let timer = setInterval(function () {
       $.each(TmrList, function (idx, item) {
         if (idx === count) {
@@ -534,9 +533,25 @@
     $(TmrList).each(function () {
       $(this).mouseenter(function () {
         $(this).addClass("on").siblings().removeClass("on");
+        //count = $(this).index();
         clearInterval(timer);
       });
-      $(this).mouseleave(function () {});
+      $(this).mouseleave(function () {
+        count = $(this).index();
+        timer = setInterval(function () {
+          $.each(TmrList, function (idx, item) {
+            if (idx === count) {
+              $(this).addClass("on");
+            } else {
+              $(this).removeClass("on");
+            }
+          });
+          count++;
+          if (count == 5) {
+            count = 0;
+          }
+        }, 2500);
+      });
     });
 
     // for (let i = 1; i < 5; i++) {
