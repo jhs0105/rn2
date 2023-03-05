@@ -69,9 +69,9 @@ input {
     > ul {
       display: flex;
       > li {
+        position: relative;
         &:hover {
           .depth01 {
-            background-color: #fff;
             color: #333;
             &:after {
               transform: scale(1);
@@ -86,12 +86,13 @@ input {
       .depth01 {
         padding: 0 50px;
         height: 110px;
-        width: 65px;
         display: flex;
         justify-content: center;
         align-items: center;
         text-transform: uppercase;
         position: relative;
+        z-index: 1;
+
         &:after {
           content: "";
           width: 30px;
@@ -104,12 +105,17 @@ input {
         }
       }
       .depth02 {
+        position: absolute;
+        width: 100%;
         background-color: #fff;
         color: #333;
         text-align: center;
-        padding: 0 20px 20px;
-        font-size: 16px;
+        padding: 110px 10px 20px;
+        font-size: 15px;
         display: none;
+        top: 0;
+        left: -10px;
+        box-shadow: 0px 0px 1px 3px #cccccc20;
         li {
           padding: 10px 0;
         }
@@ -144,6 +150,7 @@ input {
   #menupage {
     right: -100%;
     position: absolute;
+    z-index: 2;
     width: 100vw;
     background-image: url("../image/allmenu_bg.gif");
     background-size: cover;
@@ -154,11 +161,10 @@ input {
       display: flex;
       position: relative;
       .depth01 {
-        width: 400px;
         font-size: 40px;
         font-weight: 900;
-        opacity: 0.5;
         line-height: 2;
+        color: rgb(255, 255, 255, 0.5);
         &:hover {
           color: blue;
         }
@@ -166,6 +172,7 @@ input {
       .depth02 {
         display: flex;
         position: absolute;
+        color: #fff;
         left: 300px;
         top: 40%;
         opacity: 0;
@@ -188,7 +195,7 @@ input {
         }
       }
     }
-    &.on {
+    &.show {
       right: 0;
     }
   }

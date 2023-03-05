@@ -561,9 +561,10 @@
       window.scrollTo({ top: 0, duration: 1, behavior: "smooth" });
     });
     menubtn.on("click", function () {
-      $("#menupage").toggleClass("on");
+      $("#menupage").toggleClass("show");
       $("#menupage .depth02").removeClass("on");
     });
+
     $("#menupage").on("scroll touchmove mousewheel", function (event) {
       event.preventDefault();
       event.stopPropagation();
