@@ -119,7 +119,7 @@
           align-items: center;
           justify-content: center;
           position: absolute;
-          z-index: 99;
+          z-index: 50;
           top: 50%;
           &:hover {
             border-color: #333;
@@ -262,7 +262,9 @@
       font-size: 80px;
       font-weight: 700;
       line-height: 1.25;
-      margin-bottom: 50px;
+    }
+    p {
+      padding-top: 50px;
     }
   }
   .list {
@@ -333,7 +335,7 @@
   background-size: cover;
   display: flex;
   .recruit-contents {
-    width: 30%;
+    width: 35%;
     padding: 250px 0 200px;
     padding-left: 50px;
     color: #fff;
@@ -374,7 +376,7 @@
   }
   .line {
     margin: 300px auto auto;
-    width: 60%;
+    width: 55%;
     border-bottom: 3px solid rgba(255, 255, 255, 0.3);
   }
 }
@@ -436,6 +438,19 @@
         }
       }
     }
+  }
+}
+#topbutton {
+  position: fixed;
+  z-index: 99;
+  right: 10px;
+  bottom: 50px;
+  display: none;
+  color: #333;
+  cursor: pointer;
+  transform: rotate(90deg);
+  i {
+    transform: rotate(270deg);
   }
 }
 #footer {

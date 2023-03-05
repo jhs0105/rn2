@@ -31,14 +31,25 @@ input {
 
 #header {
   color: #fff;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: flex-end;
   position: absolute;
   z-index: 99;
 }
+#header.on {
+  position: fixed;
+  height: 110px;
+  background-color: #fff;
+  color: #333;
+  border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+}
+#header.on #util {
+  border-left: none;
+}
 #header h1 > a {
   position: absolute;
+  z-index: 99;
   left: 0;
   margin-left: 80px;
   display: flex;
@@ -49,7 +60,7 @@ input {
   width: 70px;
 }
 #header nav {
-  margin-right: 110px;
+  margin-right: 120px;
 }
 #header nav > ul {
   display: flex;
@@ -68,6 +79,7 @@ input {
 #header nav > ul .depth01 {
   padding: 0 50px;
   height: 110px;
+  width: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,18 +111,74 @@ input {
   position: absolute;
   right: 0;
   width: 90px;
+  z-index: 99;
+  box-sizing: border-box;
   height: 100vh;
-  border-left: 1px solid #fff;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-right: 10px;
 }
 #header #util > i {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 #header #util .menu {
   height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+#header #menupage {
+  right: -100%;
+  position: absolute;
+  width: 100vw;
+  background-image: url("../image/allmenu_bg.gif");
+  background-size: cover;
+  height: 100vh;
+  padding: 100px;
+  box-sizing: border-box;
+}
+#header #menupage > ul > li {
+  display: flex;
+  position: relative;
+}
+#header #menupage > ul > li .depth01 {
+  width: 400px;
+  font-size: 40px;
+  font-weight: 900;
+  opacity: 0.5;
+  line-height: 2;
+}
+#header #menupage > ul > li .depth01:hover {
+  color: blue;
+}
+#header #menupage > ul > li .depth02 {
+  display: flex;
+  position: absolute;
+  left: 300px;
+  top: 40%;
+  opacity: 0;
+  pointer-events: none;
+}
+#header #menupage > ul > li .depth02 > li {
+  padding-right: 65px;
+  font-size: 18px;
+}
+#header #menupage > ul > li .depth02.on {
+  opacity: 1;
+  transition: all 0.25s ease;
+}
+#header #menupage > ul > li .depth02 .depth03 {
+  padding-top: 20px;
+  opacity: 0.5;
+}
+#header #menupage > ul > li .depth02 .depth03 li {
+  font-size: 15px;
+  padding: 10px 0;
+}
+#header #menupage.on {
+  right: 0;
 }

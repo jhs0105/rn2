@@ -37,13 +37,24 @@ input {
 }
 #header {
   color: #fff;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: flex-end;
   position: absolute;
   z-index: 99;
+  &.on {
+    position: fixed;
+    height: 110px;
+    background-color: #fff;
+    color: #333;
+    border-bottom: 1px solid rgb(1, 1, 1, 0.1);
+    #util {
+      border-left: none;
+    }
+  }
   h1 > a {
     position: absolute;
+    z-index: 99;
     left: 0;
     margin-left: 80px;
     display: flex;
@@ -54,7 +65,7 @@ input {
     }
   }
   nav {
-    margin-right: 110px;
+    margin-right: 120px;
     > ul {
       display: flex;
       > li {
@@ -75,6 +86,7 @@ input {
       .depth01 {
         padding: 0 50px;
         height: 110px;
+        width: 65px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -108,20 +120,76 @@ input {
     position: absolute;
     right: 0;
     width: 90px;
+    z-index: 99;
+    box-sizing: border-box;
     height: 100vh;
     //background-color: pink;
-    border-left: 1px solid #fff;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-right: 10px;
     > i {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
     .menu {
       height: 110px;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+  }
+  #menupage {
+    right: -100%;
+    position: absolute;
+    width: 100vw;
+    background-image: url("../image/allmenu_bg.gif");
+    background-size: cover;
+    height: 100vh;
+    padding: 100px;
+    box-sizing: border-box;
+    > ul > li {
+      display: flex;
+      position: relative;
+      .depth01 {
+        width: 400px;
+        font-size: 40px;
+        font-weight: 900;
+        opacity: 0.5;
+        line-height: 2;
+        &:hover {
+          color: blue;
+        }
+      }
+      .depth02 {
+        display: flex;
+        position: absolute;
+        left: 300px;
+        top: 40%;
+        opacity: 0;
+        pointer-events: none;
+        > li {
+          padding-right: 65px;
+          font-size: 18px;
+        }
+        &.on {
+          opacity: 1;
+          transition: all 0.25s ease;
+        }
+        .depth03 {
+          padding-top: 20px;
+          opacity: 0.5;
+          li {
+            font-size: 15px;
+            padding: 10px 0;
+          }
+        }
+      }
+    }
+    &.on {
+      right: 0;
     }
   }
 }
